@@ -6,6 +6,10 @@ body{
     margin:0;
 }
 
+.jumbotron {
+    opacity: 0.5;
+}
+
 h3 {
     font-size: 60px;
     color: white;
