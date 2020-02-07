@@ -25,3 +25,28 @@ h3 {
 .container {
     margin-top: 100px;
 }
+
+.timer {
+    margin-left: 10px;
+    padding: 50px;
+}
+
+#box-0 {
+    border: solid 2px;
+    margin-right: 20px;
+}
+
+#box-1 {
+    border: solid 2px;
+    margin-right: 20px;
+}
+
+#box-2 {
+    border: solid 2px;
+    margin-right: 20px;
+}
+
+#box-3 {
+    border: solid 2px;
+    margin-right: 20px;
+}
