@@ -49,6 +49,7 @@ function startTimer(currentTime, launchTime){
     var minutesLeft = Math.floor(secondsLeft/60);
     secondsLeft = calculateMinutes(secondsLeft);
 
+    //Determine what happens happens when we get to the end of a minute, hour, or day
     interval = setInterval(function(){
         secondsLeft--;
         if(secondsLeft<0){
@@ -88,19 +89,25 @@ function calculateMinutes(seconds){
 
 //creates boxes for the time intervals
 function setupTimer(){
-    var labels = ["Days", "Hours", "Minutes", "Seconds"];
+    var labels = ["Days:", "Hours:", "Minutes:", "Seconds:"];
     for(i=0; i<labels.length; i++){
         //setup the boxes for the numbers
-        var $newBox = $("<h1>");
-        $newBox.addClass("time");
+        var $newBox = $("<div>");
+        $newBox.addClass("timer");
         $newBox.attr("id","box-"+i);
         $timerContainer.append($newBox);
+
+        //setup the numbers in the boxes
+        var $newNum = $("<h1>");
+        $newNum.addClass("number");
+        $newNum.attr("id", "num-"+i);
+        $newBox.append($newNum);
 
         //setup the boxes for the names
         var $newName = $("<h2>");
         $newName.addClass("label");
         $newName.attr("id", "label-"+i);
-        $labelContainer.append($newName);
+        $newBox.prepend($newName);
     }
     for (i=0; i<labels.length; i++){
         var $currentLabel = $("#label-"+i);
@@ -110,15 +117,15 @@ function setupTimer(){
 
 //update timer function will fill in the content of the boxes
 function updateTimer(days, hours, minutes, seconds){
-    var $dayBox = $("#box-0");
-    var $hourBox = $("#box-1");
-    var $minuteBox = $("#box-2");
-    var $secondBox = $("#box-3");
+    var $dayNum = $("#num-0");
+    var $hourNum = $("#num-1");
+    var $minuteNum = $("#num-2");
+    var $secondNum = $("#num-3");
 
-    $dayBox.text(days);
-    $hourBox.text(hours);
-    $minuteBox.text(minutes);
-    $secondBox.text(seconds);
+    $dayNum.text(days);
+    $hourNum.text(hours);
+    $minuteNum.text(minutes);
+    $secondNum.text(seconds);
 }
 
 //calling functions
