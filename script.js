@@ -13,9 +13,6 @@ var launch_date_unix;
 //current time variables
 var currentEpoch = moment().format("X");
 
-//initial call when page loads is the next lauch date by default
-
-
 //function that will load an input launch
 function loadInfo(launch){
     $.ajax({
