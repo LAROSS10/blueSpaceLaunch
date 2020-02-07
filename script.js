@@ -4,7 +4,6 @@ var standard = "next";
 
 //selector variables
 var $timerContainer = $(".timer");
-var $labelContainer = $(".timer-names");
 
 //loaded details variables
 var upcoming;
