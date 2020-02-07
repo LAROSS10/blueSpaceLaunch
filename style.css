@@ -1,0 +1,23 @@
+body{
+    background-image: url('https://media.giphy.com/media/xT0xejPUhj5GeprZcI/giphy.gif');
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+
+.jumbotron {
+    opacity: 0.5;
+}
+
+h3 {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 30px;
+}
+
+.container {
+    margin-top: 100px;
+}
