@@ -200,3 +200,5 @@ setupTimer();
 var $searchBox = $("#search");
 var $button = $("#select");
 loadInfo(1);
+MotionUI.animateIn('.card', 'fade-in');
+
