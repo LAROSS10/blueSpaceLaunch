@@ -199,4 +199,4 @@ function updateTimer(days, hours, minutes, seconds){
 setupTimer();
 var $searchBox = $("#search");
 var $button = $("#select");
-loadInfo(1);
+loadInfo(standard);
