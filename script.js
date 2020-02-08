@@ -30,8 +30,8 @@ function loadInfo(launch){
         upcoming = response.upcoming;
         details = response.details;
         launch_date_unix = parseInt(response.launch_date_unix);
-        $number.text("Launch Number:" + response.flight_number);
-        $title.text(response.mission_name + ":");
+        $number.text("Launch Number: " + response.flight_number);
+        $title.text(response.mission_name);
 
         //call the start timer function
         startTimer(currentEpoch, launch_date_unix);
