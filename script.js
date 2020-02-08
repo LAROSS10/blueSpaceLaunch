@@ -97,7 +97,7 @@ function countDown(seconds, minutes, hours, days){
         }
         $button.on("click", function(event){
             event.preventDefault();
-            break;
+            clearInterval(interval);;
         })
         //console.log("Days: "+days);
         //console.log("Hours: "+hours);
@@ -133,7 +133,7 @@ function countUp(seconds, minutes, hours, days){
         }
         $button.on("click", function(event){
             event.preventDefault();
-            break;
+            clearInterval(interval);
         })
         //console.log("Days: "+days);
         //console.log("Hours: "+hours);
