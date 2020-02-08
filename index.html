@@ -14,13 +14,14 @@
     <div class="container">
         <h3 class="animated FadeInRight slower ">Blue Space Launch Watch App</h3>
         <div class="jumbotron jumbotron-fluid">
+          <h2>Launch Timer:</h2>
           <div class="timer form-inline text-center" >
           </div>
         </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <button class= "btn btn-primary" type="button"  aria-expanded="false">Search</button>
+              <button class= "btn btn-primary" id="select" type="button"  aria-expanded="false">Search</button>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
@@ -29,8 +30,46 @@
                 <a class="dropdown-item" href="#">Separated link</a>
               </div>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            <input type="text" class="form-control" id="search" aria-label="Text input with dropdown button">
           </div>
+
+                  
+          <div class="cards form-inline">
+            <div class="card" style=" width:16rem; height:23rem">
+              <img src="https://i.gadgets360cdn.com/large/falcon_9_spacex_1519025573052.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Falcon 9</h5>
+                <p class="card-text">Click the button below for more information on the Falcon 9</p>
+                <a href="https://www.spacex.com/falcon9" target="_blank" class="btn btn-primary">Falcon 9</a>
+              </div>
+            </div>
+            <div class="card" style="width:16rem; height:23rem">
+              <img src="https://regmedia.co.uk/2018/01/08/falcon_heavy.jpg?x=442&y=293&crop=1" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Falcon Heavy</h5>
+                <p class="card-text">Click the button below for more information on the Falcon Heavy</p>
+                <a href="https://www.spacex.com/falcon-heavy" target="_blank" class="btn btn-primary">Falcon Heavy</a>
+              </div>
+            </div>
+            <div class="card" style="width:16rem; height:24rem">
+              <img src="https://i.insider.com/5e220ea524306a016e4f2012?width=1100&format=jpeg&auto=webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Dragon</h5>
+                <p class="card-text">Click the button below to learn more about the Dragon spacecraft.</p>
+                <a href="https://www.spacex.com/dragon" target="_blank" class="btn btn-primary">Dragon</a>
+              </div>
+            </div>
+            <div class="card" style="width:16rem; height:23rem">
+              <img src="https://techcrunch.com/wp-content/uploads/2019/09/Starship-Mk1-Day.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Starship</h5>
+                <p class="card-text">Click the button below to learn more about the SpaceX Starship!</p>
+                <a href="https://www.spacex.com/starship" target="_blank" class="btn btn-primary">Starship</a>
+              </div>
+            </div>
+            </div>
+        </div>
+
     </div>
     <!-- Links to javascript, Jquery, and moment.js -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
