@@ -10,6 +10,7 @@ var $timerContainer = $(".timer");
 var upcoming;
 var details;
 var launch_date_unix;
+var down = true;
 
 //current time variables
 var currentEpoch = moment().format("X");
@@ -33,13 +34,16 @@ function loadInfo(launch){
 function startTimer(currentTime, launchTime){
     //initialize # of seconds left for the timer
     var secondsLeft = launchTime - currentTime;
-    var down = true;
 
     //if the secondsleft is negative, flip it to positive and flip down to false to count up
     if(secondsLeft < 0){
-        down = false;
+        setDown(false);
         secondsLeft *= -1;
     }
+    else{setDown(true);}
+
+    //update the T box
+    if(down === false){$(".t").text("T+");}
 
     //calculate number of days
     var daysLeft = Math.floor(secondsLeft/86400);
@@ -56,6 +60,11 @@ function startTimer(currentTime, launchTime){
     //call the countdown function if the down boolean is true, else count up for a launch that already happended
     if(down === true){countDown(secondsLeft, minutesLeft, hoursLeft, daysLeft);}
     else{countUp(secondsLeft, minutesLeft, hoursLeft, daysLeft);}
+}
+
+//flips the global variable of down to false or true
+function setDown(state){
+    down = state;
 }
 
 //function to count down for launches in the future
@@ -138,9 +147,14 @@ function calculateMinutes(seconds){
 }
 
 //creates boxes for the time intervals
-//TODO add another box with a T+/- for up or down
 function setupTimer(){
     var labels = ["Days:", "Hours:", "Minutes:", "Seconds:"];
+    //create the box for T- or T+
+    var $tBox = $("<div>");
+    $tBox.addClass("t");
+    $tBox.text("T-");
+    $timerContainer.append($tBox);
+    
     for(i=0; i<labels.length; i++){
         //setup the boxes for the numbers
         var $newBox = $("<div>");
@@ -183,4 +197,6 @@ function updateTimer(days, hours, minutes, seconds){
 //calling functions
 //Todo, add the call function button here on the main page
 setupTimer();
-loadInfo(standard);
+var $searchBox = $("#search");
+var $button = $("#select");
+loadInfo(1);
