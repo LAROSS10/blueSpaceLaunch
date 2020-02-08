@@ -5,6 +5,8 @@ var standard = "next";
 
 //selector variables
 var $timerContainer = $(".timer");
+var $searchBox = $("#search");
+var $button = $("#select");
 
 //loaded details variables
 var upcoming;
@@ -17,6 +19,7 @@ var currentEpoch = moment().format("X");
 
 //function that will load an input launch
 function loadInfo(launch){
+    var $title = $(".launch-title");
     $.ajax({
     url: queryURL + launch,
     method: "GET"
@@ -24,6 +27,7 @@ function loadInfo(launch){
         upcoming = response.upcoming;
         details = response.details;
         launch_date_unix = parseInt(response.launch_date_unix);
+        $title.text(response.mission_name + ":");
 
         //call the start timer function
         startTimer(currentEpoch, launch_date_unix);
@@ -91,6 +95,10 @@ function countDown(seconds, minutes, hours, days){
             days--;
             hours = 24;
         }
+        $button.on("click", function(event){
+            event.preventDefault();
+            break;
+        })
         //console.log("Days: "+days);
         //console.log("Hours: "+hours);
         //console.log("Minutes: "+minutes);
@@ -123,6 +131,10 @@ function countUp(seconds, minutes, hours, days){
             days++;
             hours = 0;
         }
+        $button.on("click", function(event){
+            event.preventDefault();
+            break;
+        })
         //console.log("Days: "+days);
         //console.log("Hours: "+hours);
         //console.log("Minutes: "+minutes);
@@ -197,6 +209,9 @@ function updateTimer(days, hours, minutes, seconds){
 //calling functions
 //Todo, add the call function button here on the main page
 setupTimer();
-var $searchBox = $("#search");
-var $button = $("#select");
-loadInfo(1);
+loadInfo(standard);
+
+$button.on("click", function(event){
+    event.preventDefault();
+    loadInfo($searchBox.val());
+});
