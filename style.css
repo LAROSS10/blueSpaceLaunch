@@ -1,3 +1,4 @@
+
 body{
     background-image: url('https://apod.nasa.gov/apod/image/2002/SouthernMoonscapeClaviusTycho1024.jpg');
     background-size: cover;
@@ -23,37 +24,38 @@ h3 {
 }
 
 .container {
-    margin-top: 100px;
+    margin-top: 10%;
 }
 
 .timer {
-    margin-left: 10px;
-    padding: 50px;
+    margin-left: 1%;
+    padding: 5%;
 }
 
 #box-0 {
     border: solid 2px;
-    margin-right: 20px;
+    margin-right: 2%;
 }
 
 #box-1 {
     border: solid 2px;
-    margin-right: 20px;
+    margin-right: 2%;
 }
 
 #box-2 {
     border: solid 2px;
-    margin-right: 20px;
+    margin-right: 2%;
 }
 
 #box-3 {
     border: solid 2px;
-    margin-right: 20px;
+    margin-right: 2%;
 }
 
 .card {
-    margin-right: 20px;
-    margin-top: 40px;
+    margin-right: 1.5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 .card-body {
