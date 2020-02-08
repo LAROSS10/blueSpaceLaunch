@@ -8,7 +8,8 @@ body{
 }
 
 .jumbotron {
-    opacity: 0.5;
+    /* opacity: 0.5; */
+    background: rgba(0,0,0,0.5)
 }
 
 .time{
@@ -35,21 +36,34 @@ h3 {
 #box-0 {
     border: solid 2px;
     margin-right: 2%;
+    background-color: white;
+    color: black;
+    opacity: 0.50;
 }
+  
 
 #box-1 {
     border: solid 2px;
     margin-right: 2%;
+    background-color: white;
+    color: black;
+    opacity: .50;
 }
 
 #box-2 {
     border: solid 2px;
     margin-right: 2%;
+    background-color: white;
+    color: black;
+    opacity: .50;
 }
 
 #box-3 {
     border: solid 2px;
     margin-right: 2%;
+    background-color: white;
+    color: black;
+    opacity: .50;
 }
 
 .card {
@@ -72,3 +86,9 @@ h2 {
     font-size: 32px;
 }
 
+.t{
+    color: red;
+    font-size: 30px;
+    font-style: Oblique;
+    font-family: serif;
+}
