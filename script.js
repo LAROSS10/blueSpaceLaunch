@@ -19,14 +19,18 @@ var currentEpoch = moment().format("X");
 
 //function that will load an input launch
 function loadInfo(launch){
+    //selector variables for relevent things to loadInfo function
+    var $number = $("#launch-number");
     var $title = $(".launch-title");
     $.ajax({
     url: queryURL + launch,
     method: "GET"
     }).then(function(response){
+        //set details of page with response from server
         upcoming = response.upcoming;
         details = response.details;
         launch_date_unix = parseInt(response.launch_date_unix);
+        $number.text("Launch Number:" + response.flight_number);
         $title.text(response.mission_name + ":");
 
         //call the start timer function
