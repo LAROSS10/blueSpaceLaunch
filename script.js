@@ -11,6 +11,7 @@ var $button = $("#select");
 //loaded details variables
 var upcoming;
 var details;
+var videoLink;
 var launch_date_unix;
 var down = true;
 
@@ -23,6 +24,7 @@ function loadInfo(launch){
     var $number = $("#launch-number");
     var $title = $(".launch-title");
     var $description = $(".description");
+    var $link = $("#video");
 
     //variables
     var backgroundDate;
@@ -34,11 +36,14 @@ function loadInfo(launch){
         //set details of page with response from server
         upcoming = response.upcoming;
         details = response.details;
+        videoLink = response.links.video_link;
         backgroundDate = response.launch_date_local;
         launch_date_unix = parseInt(response.launch_date_unix);
         $number.text("Launch Number: " + response.flight_number);
         $title.text(response.mission_name);
         $description.text(details);
+        $link.text(videoLink);
+        $link.attr("href", videoLink);
 
         //if the date is in the past, call the new background
         if(launch_date_unix < currentEpoch){
