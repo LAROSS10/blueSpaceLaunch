@@ -210,7 +210,7 @@ function setupTimer(){
     for(i=0; i<labels.length; i++){
         //setup the boxes for the numbers
         var $newBox = $("<div>");
-        $newBox.addClass("timer");
+        $newBox.addClass("time");
         $newBox.attr("id","box-"+i);
         $timerContainer.append($newBox);
 
