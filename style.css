@@ -94,6 +94,11 @@ h2 {
     font-family: serif;
 }
 
+.description{
+    margin: 2%;
+    font-size: 20px;
+    color: white;
+  
 .text-white {
     font-family: monospace;
     font-size: 35px;
@@ -103,4 +108,5 @@ h2 {
 font-family: monospace;
 font-size: 25px;
 color: white;
+
 }

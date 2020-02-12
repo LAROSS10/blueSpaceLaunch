@@ -22,6 +22,7 @@ function loadInfo(launch){
     //selector variables for relevent things to loadInfo function
     var $number = $("#launch-number");
     var $title = $(".launch-title");
+    var $description = $(".description");
 
     //variables
     var backgroundDate;
@@ -37,6 +38,7 @@ function loadInfo(launch){
         launch_date_unix = parseInt(response.launch_date_unix);
         $number.text("Launch Number: " + response.flight_number);
         $title.text(response.mission_name);
+        $description.text(details);
 
         //if the date is in the past, call the new background
         if(launch_date_unix < currentEpoch){
