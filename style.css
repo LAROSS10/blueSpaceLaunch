@@ -20,8 +20,9 @@ h3 {
     font-size: 60px;
     color: white;
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: monospace;
     padding-bottom: 30px;
+    
 }
 
 .container {
@@ -74,11 +75,14 @@ h3 {
 }
 
 .card-body {
+    font-family: monospace;
     color: white;
     background-color: black;
+    font-size: 15px;
 }
 
 h2 {
+    font-family: monospace;
     text-align: center;
     font-size: 32px;
 }
@@ -88,4 +92,15 @@ h2 {
     font-size: 30px;
     font-style: Oblique;
     font-family: serif;
+}
+
+.text-white {
+    font-family: monospace;
+    font-size: 35px;
+    }
+
+.text-white2 {
+font-family: monospace;
+font-size: 25px;
+color: white;
 }
