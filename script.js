@@ -1,7 +1,7 @@
 //queryURL details variables
 var queryURL = "https://api.spacexdata.com/v3/launches/";
 var standard = "next";
-//nasa api key https://api.nasa.gov/planetary/apod?api_key=X261UHeXDNMWRswxYE5ZSLUr2B2Uxhf5sFRkLhxH&hd=true
+var pictureApi = "https://api.nasa.gov/planetary/apod?api_key=X261UHeXDNMWRswxYE5ZSLUr2B2Uxhf5sFRkLhxH&hd=true&date=";
 
 //selector variables
 var $timerContainer = $(".timer");
@@ -22,6 +22,10 @@ function loadInfo(launch){
     //selector variables for relevent things to loadInfo function
     var $number = $("#launch-number");
     var $title = $(".launch-title");
+
+    //variables
+    var backgroundDate;
+
     $.ajax({
     url: queryURL + launch,
     method: "GET"
@@ -29,13 +33,42 @@ function loadInfo(launch){
         //set details of page with response from server
         upcoming = response.upcoming;
         details = response.details;
+        backgroundDate = response.launch_date_local;
         launch_date_unix = parseInt(response.launch_date_unix);
         $number.text("Launch Number: " + response.flight_number);
         $title.text(response.mission_name);
 
+        //if the date is in the past, call the new background
+        if(launch_date_unix < currentEpoch){
+            loadBackground(findDate(backgroundDate));
+        }
+
         //call the start timer function
         startTimer(currentEpoch, launch_date_unix);
     });
+
+    //this simple function will return only the first 10 chars as a new string
+    //which is what the nasa api needs to look up a picture
+    function findDate(fullDate){
+        var newString = "";
+        for(i=0;i<10;i++){
+            newString += fullDate[i];
+        }
+        return newString;
+    }
+}
+
+function loadBackground(date){
+    //var selector variables
+    if(date != null){
+        var body = $("body");
+    $.ajax({
+        url: pictureApi + date,
+        method: "GET"
+    }).then(function(response){
+        body.css("background-image", "url(" + response.url + ")");
+    })
+    }
 }
 
 //start timer function will be called AFTER the server responds
@@ -52,6 +85,7 @@ function startTimer(currentTime, launchTime){
 
     //update the T box
     if(down === false){$(".t").text("T+");}
+    else{$(".t").text("T-");}
 
     //calculate number of days
     var daysLeft = Math.floor(secondsLeft/86400);
@@ -214,6 +248,7 @@ function updateTimer(days, hours, minutes, seconds){
 //Todo, add the call function button here on the main page
 setupTimer();
 loadInfo(standard);
+loadBackground();
 
 $button.on("click", function(event){
     event.preventDefault();
