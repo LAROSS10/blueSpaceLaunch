@@ -1,5 +1,5 @@
 //queryURL details variables
-var queryURL = "https://api.spacexdata.com/v3/launches/";
+var queryURL = "https://api.spacexdata.com/v4/launches/";
 var standard = "next";
 var pictureApi = "https://api.nasa.gov/planetary/apod?api_key=X261UHeXDNMWRswxYE5ZSLUr2B2Uxhf5sFRkLhxH&hd=true&date=";
 
@@ -37,8 +37,8 @@ function loadInfo(launch){
         upcoming = response.upcoming;
         details = response.details;
         videoLink = response.links.video_link;
-        backgroundDate = response.launch_date_local;
-        launch_date_unix = parseInt(response.launch_date_unix);
+        backgroundDate = response.date_local;
+        launch_date_unix = parseInt(response.date_unix);
         $number.text("Launch Number: " + response.flight_number);
         $title.text(response.mission_name);
         $description.text(details);
